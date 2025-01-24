@@ -1,6 +1,6 @@
-# AwareQEE
+# MAQEE
 
-Official PyTorch implementation of "AwareQEE: Awareness-Driven Quantization and Early Exiting Framework for Vision Transformers"
+Official PyTorch implementation of "MAQEE: Mutual Adaptive Quantization with Early Existing"
 
 ## Usage
 
