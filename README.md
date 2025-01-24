@@ -104,6 +104,12 @@ In the scripts `train_distillation_qdeit.sh` and `train_distillation_qswin.sh`, 
 
 ## Acknowledgments
 
-This repository is built upon the [LGViT](https://github.com/falcon-xu/LGViT) and [PTQ4ViT](https://github.com/hahnyuan/PTQ4ViT). Thanks for these awesome open-source projects!
+This repository builds upon the foundational work of [LGViT](https://github.com/falcon-xu/LGViT) and [PTQ4ViT](https://github.com/hahnyuan/PTQ4ViT). We extend our sincere gratitude to the creators of these outstanding open-source projects for their invaluable contributions!
+
+
+
+
+
+
 
 
