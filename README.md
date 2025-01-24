@@ -27,31 +27,43 @@ cd ./scripts
 
 - **train_baseline_deit.sh / train_baseline_swin.sh**
 
-  This is for fine-tuning *1st stage MAQEE* models and unquantized baseline models.
+  This is for fine-tuning *1st stage MAQEE* models and unquantized baseline models, which is our main .
 
 - **train_distillation_deit.sh / train_distillation_swin.sh**
 
-  This is for fine-tuning *2nd stage MAQEE* unquantized models*.
+  This is for fine-tuning *2nd stage MAQEE* unquantized models.
+
+- **train_distillation_qdeit.sh / train_distillation_qswin.sh**
+
+  This is for fine-tuning *2nd stage MAQEE* quantized models, which is our main method.
 
 - **eval_highway_deit.sh / eval_highway_swin.sh**
 
 ​		This is for evaluating fine-tuned unquantized models.
 
+- **eval_highway_deit.sh / eval_highway_swin.sh**
+
+​		This is for evaluating fine-tuned quantized models.
+
 Before running the script, modify the `path` and `model_path` in the script to be appropriate.
 
 ### Training
 
-To fine-tune a ViT backbone, run:
+To fine-tune a MAQEE backbone, run:
 
 ```bash
 source train_base_deit.sh
 ```
 
-To fine-tune a LGViT models, run:
+To fine-tune a MAQEE models, run:
 
 ```bash
+#no qunaitzed
 source train_baseline_deit.sh
 source train_distillation_deit.sh
+#qunaitzed
+source train_baseline_qdeit.sh
+source train_distillation_qdeit.sh
 ```
 
 ### Evaluation
@@ -59,7 +71,10 @@ source train_distillation_deit.sh
 To evaluate a fine-tuned ViT, run:
 
 ```bash
+#no qunaitzed
 source eval_highway_deit.sh
+#qunaitzed
+source eval_highway_qdeit.sh
 ```
 
 
@@ -67,30 +82,12 @@ source eval_highway_deit.sh
 ### Some Hyperparameters Settings
 
 
-- Exiting points settings
 
-|          | ViT-EE |          Others           |          LGViT          |
-| :------: | :----: | :-----------------------: | :---------------------: |
-| ViT-B/16 |  [6]   | [1,2,3,4,5,6,7,8,9,10,11] |   [4,5,6,7,8,9,10,11]   |
-|  DeiT-B  |  [6]   | [1,2,3,4,5,6,7,8,9,10,11] |   [4,5,6,7,8,9,10,11]   |
-|  Swin-B  |  [12]  |  [4,7,10,13,16,19,22,23]  | [4,7,10,13,16,19,22,23] |
-
-Other hyperparameters are are kept unchanged from the original baselines.
 
 
 
 ## Acknowledgments
 
-This repository is built upon the [transformers](https://github.com/huggingface/transformers) and [DeeBERT](https://github.com/castorini/DeeBERT) library. Thanks for these awesome open-source projects!
+This repository is built upon the [LGViT](https://github.com/falcon-xu/LGViT) and [PTQ4ViT](https://github.com/hahnyuan/PTQ4ViT). Thanks for these awesome open-source projects!
 
-## Citation
 
-If you find our work or this code useful, please consider citing the corresponding paper:
-```
-@article{xu2023lgvit,
-  title={LGViT: Dynamic Early Exiting for Accelerating Vision Transformer},
-  author={Xu, Guanyu and Hao, Jiawei and Shen, Li and Hu, Han and Luo, Yong and Lin, Hui and Shen, Jialie},
-  journal={arXiv preprint arXiv:2308.00255},
-  year={2023}
-}
-```
