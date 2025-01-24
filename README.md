@@ -1,6 +1,6 @@
-# LGViT
+# AwareQEE
 
-Official PyTorch implementation of "LGViT: Dynamic Early Exiting for Accelerating Vision Transformer" (**ACM MM 2023**)
+Official PyTorch implementation of "AwareQEE: Awareness-Driven Quantization and Early Exiting Framework for Vision Transformers"
 
 ## Usage
 
