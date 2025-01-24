@@ -1,13 +1,17 @@
 # MAQEE
 
-Official PyTorch implementation of "MAQEE: Mutual Adaptive Quantization with Early Existing"
-
-## Usage
-
-First, download the repository locally.
+This is the official PyTorch implementation of the paper **"MAQEE: Mutual Adaptive Quantization with Early Exiting"**.
 
 
-Then, install PyTorch and [transformers 4.26.0](https://github.com/huggingface/transformers)
+
+
+## Requirements
+
+### Installation
+
+1. Clone the repository to your local machine.
+
+2. Install PyTorch and the required dependencies:
 
 ```bash
 conda create -n maqee python=3.9.13
@@ -15,7 +19,7 @@ pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --e
 pip install transformers==4.26.0 datasets==2.9.0 evaluate==0.4.0 timm==0.6.13 wandb==0.14.2 ipykernel scikit-learn
 ```
 
-Enter the `scripts` folder to execute the scripts for training and evaluation
+3. Enter the `scripts` folder to execute the scripts for training and evaluation
 
 ```bash
 cd ./scripts
@@ -79,8 +83,20 @@ source eval_highway_qdeit.sh
 
 
 
-### Some Hyperparameters Settings
 
+
+---
+
+## Hyperparameter Settings
+
+In the scripts `train_distillation_qdeit.sh` and `train_distillation_qswin.sh`, the following hyperparameters can be adjusted:
+
+- **`calibration_num_samples`**: Number of samples used during quantization calibration.
+- **`calibration_batch_size`**: Batch size used during quantization calibration.
+- **`per_layer_bits`**: Bit-width assigned to specific layers.
+- **`dythreshold`**: Dynamically adjusts thresholds for each layer based on PGR and SQNR.
+
+---
 
 
 
