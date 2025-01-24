@@ -29,7 +29,7 @@ POSITION_EXITS='[[], [2], [3, 6, 9, 12, 15, 18], [1]]'
 export CUDA_VISIBLE_DEVICES=0,1
 export WANDB_PROJECT=${BACKBONE}_${DATASET}
 export WANDB_WATCH=all
-export HF_AUTH_TOKEN="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"
+#export HF_AUTH_TOKEN="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"
 
 
 python -m torch.distributed.run --nproc_per_node=2 --master_port=29517 --nnodes=1 ../examples/run_highway_swin.py \
