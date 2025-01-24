@@ -4,16 +4,13 @@ Official PyTorch implementation of "MAQEE: Mutual Adaptive Quantization with Ear
 
 ## Usage
 
-First, clone the repository locally:
+First, download the repository locally.
 
-```bash
-git clone https://github.com/lostsword/LGViT
-```
 
 Then, install PyTorch and [transformers 4.26.0](https://github.com/huggingface/transformers)
 
 ```bash
-conda create -n lgvit python=3.9.13
+conda create -n maqee python=3.9.13
 pip install torch==1.12.1+cu113 torchvision==0.13.1+cu113 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu113
 pip install transformers==4.26.0 datasets==2.9.0 evaluate==0.4.0 timm==0.6.13 wandb==0.14.2 ipykernel scikit-learn
 ```
@@ -30,15 +27,15 @@ cd ./scripts
 
 - **train_baseline_deit.sh / train_baseline_swin.sh**
 
-  This is for fine-tuning *1st stage LGViT* models and baseline models.
+  This is for fine-tuning *1st stage MAQEE* models and unquantized baseline models.
 
 - **train_distillation_deit.sh / train_distillation_swin.sh**
 
-  This is for fine-tuning *2nd stage  LGViT models*.
+  This is for fine-tuning *2nd stage MAQEE* unquantized models*.
 
 - **eval_highway_deit.sh / eval_highway_swin.sh**
 
-​		This is for evaluating fine-tuned models.
+​		This is for evaluating fine-tuned unquantized models.
 
 Before running the script, modify the `path` and `model_path` in the script to be appropriate.
 
